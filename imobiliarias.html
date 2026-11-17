@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d18" />
+  <meta name="description" content="Tours 360° e experiências digitais interativas para imobiliárias e incorporadoras. Apresente imóveis premium, qualifique o comprador e receba mais pedidos de visita." />
+  <title>APEX7 AI — Experiências digitais para imobiliárias</title>
+  <link rel="icon" type="image/png" href="assets/apex7ai-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#070b14;--panel:#0e1523;--line:rgba(160,185,220,.14);--text:#f2f6fc;--muted:#94a3b8;--blue:#62a8ff;--cyan:#58e1da;--green:#58d6a3;--radius:22px;--shadow:0 24px 80px rgba(0,0,0,.38)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(900px 500px at 80% -5%,rgba(64,117,210,.18),transparent 60%),radial-gradient(700px 500px at -10% 25%,rgba(64,220,215,.08),transparent 58%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,calc(100% - 44px));margin:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#a8c9f3;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:800}
+    .eyebrow:before{content:"";width:22px;height:1px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+    .gradient{background:linear-gradient(100deg,#fff 10%,#8dc6ff 48%,#83f0dc 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .muted{color:var(--muted)}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;min-width:170px}
+    .brand-mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#68d7e2,#477ded 55%,#8e78ff);display:grid;place-items:center;color:#06101b;font-family:Manrope;font-weight:900;font-size:16px}
+    .brand-name{font-family:Manrope;font-weight:800;letter-spacing:.08em;font-size:13px}
+    .brand-sub{display:block;font-size:8px;letter-spacing:.24em;color:#7f94b1;margin-top:2px}
+    .navlinks{display:flex;align-items:center;gap:4px}.navlinks a{padding:9px 11px;border-radius:10px;font-size:12px;color:#a8b5c8}.navlinks a:hover,.navlinks a.active{color:#fff;background:rgba(107,160,242,.12)}
+    .btn-primary,.nav-cta{border:0;color:#07111b;background:linear-gradient(100deg,#75e5de,#79baff);font-weight:800;padding:12px 17px;border-radius:12px;box-shadow:0 8px 28px rgba(89,183,226,.18);transition:.25s;display:inline-flex;align-items:center;gap:7px}
+    .btn-primary:hover,.nav-cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
+    .btn-secondary{border:1px solid rgba(170,198,233,.22);background:rgba(255,255,255,.035);color:#e7eef8;border-radius:12px;padding:12px 17px;font-weight:700;display:inline-flex;align-items:center;gap:7px}
+    .btn-secondary:hover{background:rgba(255,255,255,.08);border-color:rgba(118,194,255,.5)}
+    .hero{padding:72px 0 54px}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+    .hero h1{font:800 clamp(38px,5.5vw,62px)/1.04 Manrope;letter-spacing:-.05em;margin:16px 0 18px;max-width:720px}
+    .hero p{font-size:15px;line-height:1.75;color:#aab7c9;max-width:600px;margin:0}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.hero-note{margin-top:18px;color:#71829b;font-size:11px;display:flex;align-items:center;gap:8px}
+    .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(88,214,163,.12)}
+    .hero-photo{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(181,211,255,.22);box-shadow:var(--shadow);min-height:380px;background:#172437}
+    .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.7)}
+    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,22,.05),rgba(4,9,17,.6))}
+    .hotspot{position:absolute;z-index:2;width:34px;height:34px;border:2px solid #fff;border-radius:50%;background:linear-gradient(135deg,#67e5de,#5a9fff);color:#061321;font:900 12px Manrope;display:grid;place-items:center;box-shadow:0 0 0 7px rgba(88,225,218,.16);cursor:pointer}
+    .hotspot.one{left:44%;top:42%}.hotspot.two{left:70%;top:62%}
+    .hero-badge{position:absolute;z-index:3;left:16px;bottom:16px;background:rgba(5,12,22,.72);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:9px 11px;font-size:10px;color:#fff;backdrop-filter:blur(8px)}
+    .trustbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;background:rgba(255,255,255,.015)}
+    .trust-inner{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+    .trust-inner span{font-size:9px;color:#74859f;letter-spacing:.16em;text-transform:uppercase}
+    .trust-items{display:flex;gap:20px;flex-wrap:wrap}.trust-items b{font:700 10px Manrope;color:#b5c4d8;letter-spacing:.06em}
+    section{padding:68px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:26px;margin-bottom:26px}
+    .section-head h2{font:800 clamp(26px,3.6vw,39px)/1.1 Manrope;letter-spacing:-.04em;margin:11px 0 0;max-width:660px}
+    .section-head p{color:var(--muted);max-width:380px;line-height:1.7;font-size:12px;margin:0}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .card{border:1px solid var(--line);border-radius:17px;padding:19px;background:rgba(15,24,39,.65)}
+    .card h3{font:700 14px Manrope;margin:0 0 8px}.card p{font-size:11px;line-height:1.65;color:#93a3b9;margin:0}
+    .card .ico{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,rgba(94,221,215,.17),rgba(88,146,255,.17));display:grid;place-items:center;color:#91eee4;font-size:16px;margin-bottom:14px}
+    .card.problem{border-top:2px solid #f0ad74}.card.solution{border-top:2px solid #65d6be}.card.evidence{border-top:2px solid #7db8ff}
+    .card .feature-icon{font:800 20px Manrope;color:#8af0d9;margin-bottom:10px}
+    .demo-shell{border:1px solid rgba(145,181,231,.2);border-radius:22px;background:linear-gradient(145deg,rgba(17,28,45,.96),rgba(9,16,28,.96));overflow:hidden;box-shadow:var(--shadow)}
+    .demo-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+    .window-dots{display:flex;gap:6px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#38506c}.window-dots i:nth-child(1){background:#ef7e83}.window-dots i:nth-child(2){background:#edc06f}.window-dots i:nth-child(3){background:#65d6a6}
+    .demo-title{font:700 11px Manrope;letter-spacing:.07em;color:#c9d6e8}.demo-badge{font-size:9px;color:#a4eee2;border:1px solid rgba(88,225,218,.25);background:rgba(88,225,218,.07);padding:6px 9px;border-radius:20px}
+    .demo-body{display:grid;grid-template-columns:1fr 320px;gap:0;min-height:420px}
+    .scene{position:relative;min-height:420px;background:#172338;overflow:hidden;border-right:1px solid var(--line)}
+    .scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
+    .scene:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.45))}
+    .scene .hotspot{width:38px;height:38px;position:absolute;z-index:2;box-shadow:0 0 0 8px rgba(88,225,218,.16),0 8px 20px rgba(0,0,0,.32)}
+    .scene .hotspot:hover{transform:scale(1.1)}
+    .scene-label{position:absolute;z-index:3;left:15px;bottom:14px;font-size:10px;color:#fff;background:rgba(5,12,22,.68);border:1px solid rgba(255,255,255,.18);padding:8px 10px;border-radius:9px;backdrop-filter:blur(8px)}
+    .detail{padding:20px;display:flex;flex-direction:column;gap:12px;background:rgba(5,11,20,.4)}
+    .detail .mini-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8298b8;font-weight:800}
+    .detail h3{font:800 20px Manrope;margin:0}.detail p{font-size:11px;line-height:1.6;color:#94a5ba;margin:0}
+    .detail-row{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#98a9bf;border-bottom:1px solid rgba(160,185,220,.09);padding-bottom:8px}
+    .detail-row b{color:#e0e9f5;font-weight:600;text-align:right}
+    .detail .btn-primary{justify-content:center;margin-top:auto}
+    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:steps}
+    .step{padding:18px;border-top:1px solid rgba(99,191,224,.4);background:linear-gradient(180deg,rgba(22,38,60,.52),rgba(8,14,25,.16));border-radius:0 0 16px 16px;counter-increment:steps}
+    .step:before{content:"0" counter(steps);font:800 22px Manrope;color:#72deda}
+    .step h3{font:700 13px Manrope;margin:14px 0 7px}.step p{font-size:11px;color:#93a3b9;line-height:1.65;margin:0}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .price-card{border:1px solid var(--line);border-radius:19px;padding:22px;background:linear-gradient(160deg,rgba(18,30,48,.84),rgba(9,15,26,.82));position:relative}
+    .price-card.featured{border-color:rgba(102,209,219,.5);box-shadow:0 15px 45px rgba(63,175,196,.09)}
+    .popular{position:absolute;right:16px;top:15px;color:#06121c;background:linear-gradient(100deg,#7ce8d9,#83baff);border-radius:20px;padding:5px 8px;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+    .price-card h3{font:700 16px Manrope;margin:0 0 8px}.price-card>p{font-size:11px;color:#91a2ba;line-height:1.6;min-height:37px}
+    .price{font:800 28px Manrope;letter-spacing:-.04em;margin:16px 0 3px}.price small{font:500 10px 'DM Sans';color:#899bb4;letter-spacing:0}
+    .price-sub{font-size:9px;color:#7185a0}.price-card ul{padding:0;margin:18px 0 20px;list-style:none;display:grid;gap:9px}
+    .price-card li{font-size:10px;color:#b2c1d3;display:flex;gap:8px;align-items:start}.price-card li:before{content:"✓";color:#68dfc9;font-weight:900}
+    .price-card a{width:100%;justify-content:center}.pricing-note{font-size:10px;color:#788ba5;line-height:1.6;margin-top:16px}
+    .faq{display:grid;gap:10px}.faq details{border:1px solid var(--line);border-radius:13px;padding:14px 16px;background:rgba(15,24,39,.5)}
+    .faq summary{cursor:pointer;font:700 12px Manrope;color:#dce8f7;list-style:none}.faq summary::-webkit-details-marker{display:none}
+    .faq p{font-size:11px;line-height:1.65;color:#93a3b9;margin:10px 0 0}
+    .contact{background:linear-gradient(180deg,transparent,rgba(45,83,129,.12));border-top:1px solid var(--line)}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}
+    .contact h2{font:800 34px/1.08 Manrope;letter-spacing:-.05em;margin:12px 0}.contact p{font-size:12px;line-height:1.7;color:#92a3b9}
+    .contact-form{border:1px solid var(--line);background:rgba(14,23,38,.8);border-radius:18px;padding:20px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    .field label{display:block;color:#8498b4;font-size:9px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+    .field input,.field select,.field textarea{width:100%;background:#080f1b;border:1px solid rgba(160,185,220,.2);color:#eaf1fb;border-radius:10px;padding:10px 11px;outline:none}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(92,212,218,.65)}
+    .field textarea{min-height:80px;resize:vertical}
+    .form-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+    .form-hint{font-size:9px;color:#71849e;line-height:1.5;max-width:240px}
+    .footer{border-top:1px solid var(--line);padding:20px 0;color:#70829b;font-size:10px}
+    .footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer b{color:#d1e0f2;letter-spacing:.1em}
+    .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:linear-gradient(100deg,#46d68b,#1eaa70);color:#042013;font-size:12px;font-weight:800;box-shadow:0 12px 36px rgba(13,190,111,.3)}
+    @media(max-width:980px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.hero-photo{min-height:340px}.demo-body{grid-template-columns:1fr}.scene{border-right:0;border-bottom:1px solid var(--line)}.grid-3,.pricing-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.grid-3,.pricing-grid,.steps,.fields{grid-template-columns:1fr}.hero h1{font-size:37px}.section-head{display:block}.section-head p{margin-top:12px}.whatsapp-float{right:10px;bottom:10px;padding:10px 13px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="APEX7 AI início">
+        <div class="brand-mark">A7</div><div><div class="brand-name">APEX7 AI</div><span class="brand-sub">IMMERSIVE • INTELLIGENCE</span></div>
+      </a>
+      <nav class="navlinks" aria-label="Navegação">
+        <a class="active" href="#inicio">Imobiliárias</a>
+        <a href="#solucao">Solução</a>
+        <a href="#demonstracao">Demonstração</a>
+        <a href="#processo">Processo</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20quero%20uma%20proposta%20de%20tour%20360%C2%B0%20para%20imobili%C3%A1ria." target="_blank" rel="noopener">Falar no WhatsApp ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Para imobiliárias e incorporadoras</span>
+          <h1>Transforme imóveis em <span class="gradient">experiências digitais</span> que geram visitas.</h1>
+          <p>Tour 360° interativo com pontos clicáveis, informações do imóvel e contato direto com o corretor. O comprador explora antes de agendar — e chega mais preparado para a visita.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#demonstracao">Ver demonstração <span>↗</span></a>
+            <a class="btn-secondary" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20conversa%20sobre%20tour%20360%C2%B0%20para%20imobili%C3%A1ria." target="_blank" rel="noopener">Agendar conversa</a>
+          </div>
+          <div class="hero-note"><span class="pulse"></span> Piloto com 1 imóvel • condições por volume para carteira</div>
+        </div>
+        <div class="hero-photo">
+          <img src="assets/realestate.jpg" alt="Sala de apartamento de alto padrão com tour virtual" />
+          <button class="hotspot one" type="button" aria-label="Ponto de interesse: sala integrada">1</button>
+          <button class="hotspot two" type="button" aria-label="Ponto de interesse: varanda">2</button>
+          <div class="hero-badge">Sala integrada • varanda • 128 m²</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trustbar"><div class="container trust-inner"><span>Experiência para toda a jornada do imóvel</span><div class="trust-items"><b>TOUR 360°</b><b>HOTSPOTS</b><b>WHATSAPP</b><b>QR CODE</b><b>ANÚNCIO</b></div></div></div>
+
+    <section id="solucao">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Por que funciona</span><h2>O comprador entende o imóvel <span class="gradient">antes de sair de casa.</span></h2></div><p>Menos visitas improdutivas, mais interesse qualificado e um imóvel que se destaca na carteira.</p></div>
+        <div class="grid-3">
+          <article class="card problem"><div class="ico">⌂</div><h3>O problema</h3><p>Fotos soltas não mostram a circulação, a conexão entre ambientes e a sensação real do espaço. O corretor gasta tempo com quem ainda não entendeu o imóvel.</p></article>
+          <article class="card solution"><div class="ico">✦</div><h3>A solução APEX7</h3><p>Tour 360° navegável com hotspots de acabamentos, metragem, diferenciais e um botão direto para o corretor. O interessado explora no ritmo dele.</p></article>
+          <article class="card evidence"><div class="ico">↗</div><h3>Resultado esperado</h3><p>Apresentação mais completa, contato mais qualificado e menos visitas só para “conhecer”. Resultados devem ser medidos em cada piloto — sem promessa de conversão garantida.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">O que está incluso</span><h2>Não é só foto 360°. <span class="gradient">É uma apresentação comercial.</span></h2></div><p>Um produto pensado para imóveis premium, mobiliados e decorados — onde o detalhe faz diferença.</p></div>
+        <div class="grid-3">
+          <article class="card"><div class="ico">◉</div><h3>Tour 360° navegável</h3><p>Ambientes conectados: sala, cozinha, quartos, banheiros, varanda e áreas de lazer.</p></article>
+          <article class="card"><div class="ico">✦</div><h3>Hotspots comerciais</h3><p>De 5 a 8 pontos relevantes por imóvel: acabamentos, metragem, mobiliário e diferenciais.</p></article>
+          <article class="card"><div class="ico">⌁</div><h3>Contato e agendamento</h3><p>Botão de WhatsApp com mensagem pronta, referência do imóvel e formulário de interesse.</p></article>
+          <article class="card"><div class="ico">⌖</div><h3>Link para anúncio e site</h3><p>Link compartilhável e incorporável no site da imobiliária, portal ou atendimento.</p></article>
+          <article class="card"><div class="ico">▤</div><h3>QR Code</h3><p>Para placas, materiais impressos, vitrine e atendimento presencial no imóvel.</p></article>
+          <article class="card"><div class="ico">▥</div><h3>Teste em celular e desktop</h3><p>Experiência revisada antes da entrega, com uma rodada de ajustes inclusa.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demonstracao">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Demonstração</span><h2>Veja como o comprador <span class="gradient">explora o imóvel.</span></h2></div><p>Clique nos pontos para entender a lógica. A experiência real é montada com as fotos e informações do seu imóvel.</p></div>
+        <div class="demo-shell">
+          <div class="demo-top"><div style="display:flex;align-items:center;gap:12px"><div class="window-dots"><i></i><i></i><i></i></div><div class="demo-title">APEX7 • EXPERIÊNCIA IMOBILIÁRIA</div></div><span class="demo-badge">● MODO DEMONSTRAÇÃO</span></div>
+          <div class="demo-body">
+            <div class="scene">
+              <img src="assets/realestate.jpg" alt="Demonstração de tour 360° em apartamento" />
+              <button class="hotspot one" type="button" aria-label="Ponto 1: sala e varanda">1</button>
+              <button class="hotspot two" type="button" aria-label="Ponto 2: cozinha">2</button>
+              <div class="scene-label">IMÓVEL DEMONSTRATIVO • CLIQUE NOS PONTOS 1 E 2</div>
+            </div>
+            <div class="detail">
+              <div class="mini-label">Ponto de interesse 01</div>
+              <h3>Sala integrada</h3>
+              <p>Ambiente com pé-direito alto, iluminação natural e integração com a varanda. Toque no ponto para ver os detalhes que o comprador pode consultar.</p>
+              <div class="detail-row"><span>Área</span><b>42 m²</b></div>
+              <div class="detail-row"><span>Acabamento</span><b>Porcelanato e marcenaria</b></div>
+              <div class="detail-row"><span>Próximo passo</span><b>Agendar visita</b></div>
+              <a class="btn-primary" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20vi%20a%20demonstra%C3%A7%C3%A3o%20do%20tour%20360%C2%B0%20e%20quero%20uma%20proposta%20para%20minha%20imobili%C3%A1ria." target="_blank" rel="noopener">Quero uma proposta ↗</a>
+            </div>
+          </div>
+        </div>
+        <p class="pricing-note">Demonstração ilustrativa. O tour real usa fotos do imóvel do cliente, informações aprovadas pela imobiliária e integrações contratadas.</p>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Como funciona</span><h2>Do imóvel ao link <span class="gradient">em poucos dias.</span></h2></div><p>Processo padronizado, prazo definido e uma rodada de revisão para garantir a apresentação.</p></div>
+        <div class="steps">
+          <article class="step"><h3>Briefing</h3><p>Escolha dos imóveis, o que destacar e as informações que podem ser publicadas.</p></article>
+          <article class="step"><h3>Captura 360°</h3><p>Registro dos ambientes com câmera 360° e tripé, em pontos que mostram a circulação do imóvel.</p></article>
+          <article class="step"><h3>Montagem</h3><p>Ambientes conectados, hotspots, fotos, descrição e botão de WhatsApp configurados.</p></article>
+          <article class="step"><h3>Entrega</h3><p>Link, QR Code, teste em celular/desktop e instruções para usar no anúncio e no site.</p></article>
+        </div>
+        <p class="pricing-note">Prazo médio por imóvel: 2 a 4 dias úteis após acesso liberado e informações recebidas. Volumes maiores são entregues em lotes.</p>
+      </div>
+    </section>
+
+    <section id="planos">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Planos para carteira</span><h2>Comece com um imóvel. <span class="gradient">Escale com volume.</span></h2></div><p>Valores de referência para conversa inicial. O orçamento final depende do tamanho do imóvel, quantidade de pontos e prazo.</p></div>
+        <div class="pricing-grid">
+          <article class="price-card"><h3>Piloto</h3><p>Para validar a experiência em um imóvel estratégico da carteira.</p><div class="price">R$ 1.490 <small>/ imóvel</small></div><div class="price-sub">1 imóvel • escopo definido</div><ul><li>Tour 360° de 1 imóvel</li><li>Até 8 ambientes/pontos</li><li>5 hotspots comerciais</li><li>Botão de WhatsApp e link</li><li>1 rodada de revisão</li></ul><a class="btn-secondary" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20quero%20o%20piloto%20de%20tour%20360%C2%B0%20para%20um%20im%C3%B3vel." target="_blank" rel="noopener">Quero o piloto</a></article>
+          <article class="price-card featured"><span class="popular">Melhor custo por imóvel</span><h3>Lote de 10</h3><p>Para imobiliárias que querem padronizar a apresentação da carteira.</p><div class="price">R$ 9.900 <small>/ lote</small></div><div class="price-sub">R$ 990 por imóvel</div><ul><li>10 imóveis com o mesmo padrão</li><li>Captação agendada por região</li><li>Hotspots e WhatsApp em todos</li><li>Entrega em lotes semanais</li><li>Revisões limitadas por imóvel</li></ul><a class="btn-primary" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20quero%20uma%20proposta%20para%2010%20im%C3%B3veis%20com%20tour%20360%C2%B0." target="_blank" rel="noopener">Solicitar proposta ↗</a></article>
+          <article class="price-card"><h3>20+ imóveis</h3><p>Para carteiras maiores, incorporadoras e operações recorrentes.</p><div class="price">Sob consulta</div><div class="price-sub">rotas • equipe • cronograma</div><ul><li>Condição por volume</li><li>Planejamento de rotas e agenda</li><li>Padrão visual da imobiliária</li><li>Relatórios conforme escopo</li><li>Contrato mensal por lotes</li></ul><a class="btn-secondary" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20tenho%20uma%20carteira%20de%2020%2B%20im%C3%B3veis%20e%20quero%20falar%20sobre%20tour%20360%C2%B0." target="_blank" rel="noopener">Falar sobre volume</a></article>
+        </div>
+        <p class="pricing-note">50% para iniciar a produção e 50% na entrega. Valores de referência; o escopo final é confirmado após briefing. Hospedagem, licenças de terceiros, deslocamento fora da região e produção extra podem ser cobrados à parte. Nenhum aumento de conversão é garantido; resultados devem ser medidos em cada projeto.</p>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Dúvidas frequentes</span><h2>O que a imobiliária <span class="gradient">costuma perguntar.</span></h2></div></div>
+        <div class="faq">
+          <details><summary>Preciso ter câmera 360° ou enviar fotos?</summary><p>Não. A captura pode ser feita pela APEX7 AI ou por um parceiro de captação. Você só precisa liberar o acesso ao imóvel e fornecer as informações que podem ser publicadas.</p></details>
+          <details><summary>Quanto tempo leva para entregar?</summary><p>Em média, 2 a 4 dias úteis por imóvel após o acesso e as informações. Para lotes, o prazo é dividido por semanas, conforme agenda de captação.</p></details>
+          <details><summary>O tour funciona no celular?</summary><p>Sim. A experiência é revisada em celular e desktop antes da entrega, e o link pode ser compartilhado por WhatsApp, anúncio, site e QR Code.</p></details>
+          <details><summary>Posso usar no anúncio e no site?</summary><p>Sim. Você recebe um link compartilhável e pode incorporar no site da imobiliária, portal ou atendimento, conforme o escopo contratado.</p></details>
+          <details><summary>O que acontece se o imóvel for vendido?</summary><p>O tour pode ser mantido como referência do padrão da imobiliária ou desativado, conforme o contrato. Imóveis novos entram nos lotes seguintes.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-grid">
+        <div><span class="eyebrow">Vamos começar</span><h2>Escolha um imóvel. <span class="gradient">Veja o resultado.</span></h2><p>Conte quantos imóveis você quer apresentar e qual é o perfil da carteira. A proposta é montada com escopo, prazo e valor por volume.</p><div style="display:grid;gap:10px;margin-top:20px;color:#b8c8db;font-size:11px"><div>✦ Piloto pago com 1 imóvel</div><div>✦ Lotes de 5, 10 ou 20+ imóveis</div><div>✦ Padrão visual da imobiliária</div></div></div>
+        <form class="contact-form" id="leadForm">
+          <div class="fields">
+            <div class="field"><label>Seu nome</label><input name="nome" required placeholder="Como podemos chamar você?"></div>
+            <div class="field"><label>Imobiliária</label><input name="empresa" placeholder="Nome da empresa"></div>
+            <div class="field"><label>Imóveis na carteira</label><select name="volume"><option>1 a 3 imóveis</option><option>5 a 10 imóveis</option><option>20 a 30 imóveis</option><option>50 ou mais imóveis</option></select></div>
+            <div class="field"><label>Contato</label><input name="contato" placeholder="WhatsApp ou e-mail"></div>
+          </div>
+          <div class="field"><label>O que você quer apresentar melhor?</label><textarea name="necessidade" placeholder="Ex.: apartamentos mobiliados, imóveis premium, lançamentos..."></textarea></div>
+          <div class="form-actions"><span class="form-hint">Ao enviar, o WhatsApp abre com os dados preenchidos para você confirmar.</span><button class="btn-primary" type="submit">Enviar pelo WhatsApp ↗</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><div><b>APEX7 AI</b> · Immersive Experiences & Intelligent Growth</div><div>Fortaleza · Ceará · Brasil</div><div><a href="index.html">Voltar ao site principal ↑</a> &nbsp;|&nbsp; <a href="https://wa.me/5584987586308" target="_blank" rel="noopener">WhatsApp: (84) 98758-6308</a></div></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20quero%20uma%20proposta%20de%20tour%20360%C2%B0%20para%20imobili%C3%A1ria." target="_blank" rel="noopener"><span>◉</span> Fale conosco</a>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const detailData = {
+      one: {eyebrow:'Ponto de interesse 01', title:'Sala integrada', text:'Ambiente com pé-direito alto, iluminação natural e integração com a varanda. Toque no ponto para ver os detalhes que o comprador pode consultar.', rows:[['Área','42 m²'],['Acabamento','Porcelanato e marcenaria'],['Próximo passo','Agendar visita']]},
+      two: {eyebrow:'Ponto de interesse 02', title:'Cozinha e varanda', text:'Cozinha planejada com bancada, armários e eletrodomésticos. A varanda aparece integrada para mostrar a circulação real do imóvel.', rows:[['Área','18 m²'],['Diferencial','Cozinha planejada'],['Próximo passo','Falar com corretor']]}
+    };
+    document.querySelectorAll('.scene .hotspot').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const d = detailData[btn.classList.contains('one') ? 'one' : 'two'];
+        document.querySelector('.detail .mini-label').textContent = d.eyebrow;
+        document.querySelector('.detail h3').textContent = d.title;
+        document.querySelector('.detail p').textContent = d.text;
+        document.querySelector('.detail').querySelectorAll('.detail-row').forEach((row, i) => {
+          row.innerHTML = '<span>' + d.rows[i][0] + '</span><b>' + d.rows[i][1] + '</b>';
+        });
+        document.querySelectorAll('.scene .hotspot').forEach((b) => b.classList.toggle('active', b === btn));
+      });
+    });
+    $('leadForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const msg = ['Olá! Vim pela página de imobiliárias da APEX7 AI.', 'Nome: ' + f.get('nome'), 'Imobiliária: ' + f.get('empresa'), 'Volume: ' + f.get('volume'), 'Contato: ' + f.get('contato'), 'O que quero apresentar: ' + f.get('necessidade')].join('\n');
+      window.open('https://wa.me/5584987586308?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
