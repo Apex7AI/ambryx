@@ -169,6 +169,18 @@
     .video-card{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(14,22,36,.62);display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
     .video-card img{width:120px;height:120px;object-fit:contain;background:#fff;border-radius:12px;padding:6px}
     .video-card h4{font:800 13px Manrope;margin:0 0 7px}.video-card p{font-size:10.5px;line-height:1.6;color:#94a5ba;margin:0 0 12px}
+    .video-feature{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(14,22,36,.62);display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:stretch;margin-top:14px}
+    .video-feature .thumb{position:relative;border:1px solid rgba(170,200,245,.16);border-radius:12px;overflow:hidden;min-height:190px;background:#0b1727;padding:0;text-align:left;cursor:pointer}
+    .video-feature .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62);transition:transform .45s,filter .3s}
+    .video-feature .thumb:hover img{transform:scale(1.04);filter:brightness(.8)}
+    .video-feature .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.7);background:rgba(6,15,28,.72);color:#fff;font-size:20px}
+    .video-feature .thumb-label{position:absolute;z-index:2;left:12px;bottom:11px;font-size:9px;font-weight:800;letter-spacing:.08em;color:#fff}
+    .video-feature .vbody small{font-size:9px;font-weight:800;letter-spacing:.14em;color:#80ded8;text-transform:uppercase}
+    .video-feature .vbody h4{font:800 17px Manrope;margin:7px 0;letter-spacing:-.02em}
+    .video-feature .vbody>p{font-size:10.5px;line-height:1.6;color:#94a5ba;margin:0 0 12px}
+    .video-feature .qr{display:flex;align-items:center;gap:10px;margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+    .video-feature .qr img{width:62px;height:62px;flex:0 0 62px;object-fit:contain;background:#fff;border-radius:8px;padding:4px}
+    .video-feature .qr span{font-size:9px;color:#8ea0b8;line-height:1.5}
     .gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
     .gallery-item{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#111a29;aspect-ratio:4/3;padding:0;text-align:left}
     .gallery-item img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s,filter .3s;filter:brightness(.86)}
@@ -204,7 +216,7 @@
     .toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#d9fff6;color:#07171a;padding:12px 17px;border-radius:12px;font-size:12px;font-weight:700;box-shadow:0 15px 40px rgba(0,0,0,.3);transition:.25s;z-index:220}
     .toast.show{opacity:1;transform:translate(-50%,0)}
     @media(max-width:1120px){.navlinks{display:none}.menu-btn{display:block}.mobile-nav{position:absolute;left:0;right:0;top:72px;background:rgba(7,11,20,.98);border-bottom:1px solid var(--line);padding:12px 22px;display:none;grid-template-columns:1fr 1fr;gap:6px}.mobile-nav.open{display:grid}.mobile-nav a{padding:11px;border:1px solid var(--line);border-radius:9px;font-size:12px;color:#dce8f7;background:rgba(255,255,255,.03)}.stat-grid,.journey,.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.implant{grid-template-columns:repeat(3,minmax(0,1fr))}.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:820px){.hero-grid,.split,.split.reverse{grid-template-columns:1fr}.hero-photo{min-height:330px}.dir-body{grid-template-columns:1fr}.dir-side{border-right:0;border-bottom:1px solid var(--line)}.store-list{max-height:230px}.detail-card{grid-template-columns:1fr}.two-col,.next-grid,.parking-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.offer-card{grid-template-columns:1fr}.video-card{grid-template-columns:90px 1fr}.video-card img{width:90px;height:90px}}
+    @media(max-width:820px){.hero-grid,.split,.split.reverse{grid-template-columns:1fr}.hero-photo{min-height:330px}.dir-body{grid-template-columns:1fr}.dir-side{border-right:0;border-bottom:1px solid var(--line)}.store-list{max-height:230px}.detail-card{grid-template-columns:1fr}.two-col,.next-grid,.parking-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.offer-card{grid-template-columns:1fr}.video-card{grid-template-columns:90px 1fr}.video-card img{width:90px;height:90px}.video-feature{grid-template-columns:1fr}}
     @media(max-width:600px){.stat-grid,.journey,.feature-grid,.implant,.gallery-grid,.fields{grid-template-columns:1fr}.hero h1{font-size:38px}.section-head{display:block}.section-head p{margin-top:12px}.whatsapp-float{right:10px;bottom:10px;padding:10px 13px}.dir-main{padding:12px}.map-stage{min-height:240px}.detail-actions .btn-primary,.detail-actions .btn-secondary{width:100%}.video-modal,.image-modal{padding:10px}.form-actions{display:block}.form-actions .btn-primary{width:100%;margin-top:12px}}
   </style>
 </head>
@@ -410,9 +422,19 @@
           <div class="panel"><h4>Indicadores do piloto</h4><ul><li>QR Codes escaneados</li><li>Buscas por loja e categoria</li><li>Cliques em páginas e ofertas</li><li>Rotas iniciadas e destinos consultados</li><li>Feedback dos visitantes e da equipe</li></ul><p class="note">Indicadores de uso não equivalem automaticamente a fluxo de pessoas ou vendas. Para atribuir vendas, é necessária integração e metodologia de medição.</p></div>
           <div class="panel"><h4>Reunião de descoberta</h4><ol><li>Entender o mapa e os desafios atuais.</li><li>Escolher um piso ou setor piloto.</li><li>Definir lojas, serviços e campanhas iniciais.</li><li>Validar experiência, implantação e indicadores.</li></ol><p class="note">Sem compromisso de escopo fechado antes do levantamento.</p></div>
         </div>
-        <div class="video-card" style="margin-top:14px">
-          <img src="assets/shopping/09-qr-video.png" alt="QR Code do vídeo de referência" loading="lazy">
-          <div><h4>Vídeo de referência</h4><p>Escaneie para assistir à referência visual enviada pela APEX7 AI ou assista aqui dentro da página.</p><button class="btn-secondary" type="button" onclick="openVideo('f89Zxx6KfFc','Referência visual — experiência para shoppings')">Assistir nesta página ▶</button></div>
+        <div class="video-feature">
+          <button class="thumb" type="button" onclick="openVideo('f89Zxx6KfFc','Tour interativo de shopping')" aria-label="Reproduzir o vídeo Tour interativo de shopping nesta página">
+            <img src="assets/shopping.jpg" alt="Interior de shopping com lojas e circulação" loading="lazy">
+            <span class="play">▶</span>
+            <span class="thumb-label">SHOPPING • TOUR INTERATIVO</span>
+          </button>
+          <div class="vbody">
+            <small>Vídeo • Shopping</small>
+            <h4>Tour interativo de shopping</h4>
+            <p>Explore como o visitante pode localizar lojas, serviços, corredores e pontos de interesse. O mesmo vídeo em destaque na página inicial.</p>
+            <button class="btn-primary" type="button" onclick="openVideo('f89Zxx6KfFc','Tour interativo de shopping')">Assistir nesta página ▶</button>
+            <div class="qr"><img src="assets/shopping/09-qr-video.png" alt="QR Code do vídeo de referência" loading="lazy"><span>Ou escaneie o QR Code para assistir no celular.</span></div>
+          </div>
         </div>
         <p class="note">Vídeo e telas do site são referências ilustrativas de conceito. O projeto real será capturado, configurado e validado no espaço do shopping.</p>
         <div style="margin-top:22px"><a class="btn-primary" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20quero%20agendar%20a%20reuni%C3%A3o%20de%20descoberta%20para%20o%20diret%C3%B3rio%20do%20shopping." target="_blank" rel="noopener">Agendar reunião de descoberta ↗</a></div>
