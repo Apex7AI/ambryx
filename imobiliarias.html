@@ -135,7 +135,16 @@
     .video-player{aspect-ratio:16/9;background:#000}
     .video-player iframe{width:100%;height:100%;border:0;display:block}
     .video-modal-foot{padding:10px 15px;color:#91a3bb;font-size:10px}
-    @media(max-width:900px){.videos{grid-template-columns:1fr 1fr}}
+    .video-feature{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(14,22,36,.62);display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:stretch;margin-bottom:16px}
+    .video-feature .thumb{position:relative;border:1px solid rgba(170,200,245,.16);border-radius:12px;overflow:hidden;min-height:190px;background:#0b1727;padding:0;text-align:left;cursor:pointer}
+    .video-feature .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62);transition:transform .45s,filter .3s}
+    .video-feature .thumb:hover img{transform:scale(1.04);filter:brightness(.8)}
+    .video-feature .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.7);background:rgba(6,15,28,.72);color:#fff;font-size:20px}
+    .video-feature .thumb-label{position:absolute;z-index:2;left:12px;bottom:11px;font-size:9px;font-weight:800;letter-spacing:.08em;color:#fff}
+    .video-feature .vbody small{font-size:9px;font-weight:800;letter-spacing:.14em;color:#80ded8;text-transform:uppercase}
+    .video-feature .vbody h4{font:800 17px Manrope;margin:7px 0;letter-spacing:-.02em}
+    .video-feature .vbody>p{font-size:10.5px;line-height:1.6;color:#94a5ba;margin:0 0 12px}
+    @media(max-width:900px){.videos{grid-template-columns:1fr 1fr}.video-feature{grid-template-columns:1fr}}
     @media(max-width:640px){.videos{grid-template-columns:1fr}.video-modal{padding:12px}}
   </style>
 </head>
@@ -259,6 +268,19 @@
     <section id="videos">
       <div class="container">
         <div class="section-head"><div><span class="eyebrow">Vídeos</span><h2>Veja as experiências <span class="gradient">em movimento.</span></h2></div><p>Exemplos de tour em edifício e imóvel com itens à venda. Os vídeos abrem dentro da página.</p></div>
+        <div class="video-feature">
+          <button class="thumb" type="button" onclick="openVideo('X5_98D8eXXg','Imóvel com itens à venda')" aria-label="Reproduzir o vídeo Imóvel com itens à venda nesta página">
+            <img src="assets/realestate.jpg" alt="Apartamento contemporâneo para visita digital" loading="lazy">
+            <span class="play">▶</span>
+            <span class="thumb-label">IMÓVEL • ITENS À VENDA</span>
+          </button>
+          <div class="vbody">
+            <small>Vídeo • Imobiliário</small>
+            <h4>Imóvel com itens à venda</h4>
+            <p>O visitante explora o imóvel e clica nos itens à venda para ver detalhes e falar direto no WhatsApp. O mesmo vídeo em destaque na página inicial.</p>
+            <button class="btn-primary" type="button" onclick="openVideo('X5_98D8eXXg','Imóvel com itens à venda')">Assistir nesta página ▶</button>
+          </div>
+        </div>
         <div class="videos">
           <article class="video-card"><div class="video-frame"><button class="video-thumb" type="button" onclick="openVideo('WhC362CB_rY','Tour virtual pelo prédio')" aria-label="Reproduzir vídeo do prédio"><img src="assets/realestate.jpg" alt="Interior de edifício moderno" loading="lazy"><span class="video-play">▶</span><span class="video-thumb-label">EDIFÍCIOS • TOUR DIGITAL</span></button></div><div class="video-info"><small>Vídeo 01 • Edifícios</small><h3>Tour virtual pelo prédio</h3><p>Recepção, pavimentos, áreas comuns e acessos.</p><button type="button" onclick="openVideo('WhC362CB_rY','Tour virtual pelo prédio')">Assistir nesta página ▶</button></div></article>
           <article class="video-card"><div class="video-frame"><button class="video-thumb" type="button" onclick="openVideo('X5_98D8eXXg','Imóvel com itens à venda')" aria-label="Reproduzir vídeo do imóvel"><img src="assets/realestate.jpg" alt="Apartamento contemporâneo" loading="lazy"><span class="video-play">▶</span><span class="video-thumb-label">IMÓVEL • ITENS À VENDA</span></button></div><div class="video-info"><small>Vídeo 02 • Imobiliário</small><h3>Imóvel com itens à venda</h3><p>O visitante explora o imóvel e clica nos itens à venda.</p><button type="button" onclick="openVideo('X5_98D8eXXg','Imóvel com itens à venda')">Assistir nesta página ▶</button></div></article>
