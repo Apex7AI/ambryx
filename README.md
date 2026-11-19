@@ -6,10 +6,13 @@ Não possui backend nem etapa de build.
 ## Estrutura
 
 ```
-index.html    Página completa (estilos, scripts e conteúdo)
-assets/       Imagens e logo usados na página
-nginx.conf    Configuração do nginx (cache e gzip)
-Dockerfile    Imagem nginx:alpine servindo o site na porta 80
+index.html         Página completa (estilos, scripts e conteúdo)
+imobiliarias.html  Página dedicada ao segmento imobiliário
+shopping.html      Página dedicada a shoppings centers (diretório interativo)
+assets/            Imagens e logo usados na página
+assets/shopping/   Imagens da galeria do shopping + galeria.json
+nginx.conf         Configuração do nginx (cache e gzip)
+Dockerfile         Imagem nginx:alpine servindo o site na porta 80
 ```
 
 ## Rodar localmente
@@ -46,9 +49,10 @@ O EasyPanel faz o redeploy automaticamente (se o auto deploy estiver ligado).
 
 ## Observações
 
-- Os vídeos abrem no player incorporado dentro da página. A reprodução depende da
-  permissão de incorporação configurada no canal do YouTube; se estiver bloqueada,
-  use o link "Abrir no YouTube" no rodapé do player.
+- Os vídeos abrem no player incorporado dentro da página, sem link de download.
+  A reprodução depende da permissão de incorporação configurada no canal do YouTube.
+- O material de origem (`.pptx`) não faz parte da publicação: fica fora do repositório
+  e do container, mantido apenas como referência interna.
 - O formulário de contato gera um link `wa.me` com os dados preenchidos no momento
   do envio (WhatsApp +55 84 98758-6308). Não há armazenamento de leads no servidor.
 - Os hotspots são demonstrativos sobre imagens ilustrativas (não é um tour 360°/3D real).

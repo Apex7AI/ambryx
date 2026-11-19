@@ -3,3 +3,7 @@
 .dockerignore
 README.md
 Dockerfile
+FONTES_REMOVIDAS.md
+**/*.pptx
+**/*.ppt
+**/LEIA-ME.txt

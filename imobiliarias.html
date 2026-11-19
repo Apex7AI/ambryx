@@ -101,8 +101,42 @@
     .footer{border-top:1px solid var(--line);padding:20px 0;color:#70829b;font-size:10px}
     .footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer b{color:#d1e0f2;letter-spacing:.1em}
     .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:linear-gradient(100deg,#46d68b,#1eaa70);color:#042013;font-size:12px;font-weight:800;box-shadow:0 12px 36px rgba(13,190,111,.3)}
-    @media(max-width:980px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.hero-photo{min-height:340px}.demo-body{grid-template-columns:1fr}.scene{border-right:0;border-bottom:1px solid var(--line)}.grid-3,.pricing-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:1080px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.hero-photo{min-height:340px}.demo-body{grid-template-columns:1fr}.scene{border-right:0;border-bottom:1px solid var(--line)}.grid-3,.pricing-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
     @media(max-width:640px){.grid-3,.pricing-grid,.steps,.fields{grid-template-columns:1fr}.hero h1{font-size:37px}.section-head{display:block}.section-head p{margin-top:12px}.whatsapp-float{right:10px;bottom:10px;padding:10px 13px}}
+    .data-card .feature-icon{font-size:26px;color:#d7eeff;letter-spacing:-.03em}
+    .data-card h3{font:800 13px Manrope;margin:0 0 6px}
+    .data-card p{font-size:10px}
+    .data-note{font-size:10px;color:#788ba5;line-height:1.6;margin-top:14px}
+    .data-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+    .data-strip div{display:flex;gap:10px;align-items:baseline}
+    .data-strip b{font:800 20px Manrope;letter-spacing:-.03em;color:#d7eeff;white-space:nowrap}
+    .data-strip span{font-size:10px;line-height:1.5;color:#8fa1b8}
+    @media(max-width:780px){.data-strip{grid-template-columns:1fr}}
+    .videos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .video-card{border:1px solid var(--line);background:rgba(15,24,39,.65);border-radius:17px;overflow:hidden}
+    .video-frame{aspect-ratio:16/9;background:linear-gradient(135deg,#17283e,#0a1220);position:relative}
+    .video-thumb{width:100%;height:100%;position:relative;display:block;padding:0;border:0;background:#0b1727;text-align:left;overflow:hidden;cursor:pointer}
+    .video-thumb img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(.65);transition:transform .45s,filter .3s}
+    .video-thumb:hover img{transform:scale(1.055);filter:brightness(.82)}
+    .video-thumb:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.48))}
+    .video-play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.75);background:rgba(6,15,28,.72);color:#fff;font-size:20px;box-shadow:0 8px 32px rgba(0,0,0,.35)}
+    .video-thumb-label{position:absolute;z-index:2;left:12px;bottom:11px;color:#fff;font-size:9px;font-weight:800;letter-spacing:.04em}
+    .video-info{padding:13px}
+    .video-info small{color:#80ded8;text-transform:uppercase;letter-spacing:.12em;font-size:9px;font-weight:800}
+    .video-info h3{font:700 13px Manrope;margin:7px 0}
+    .video-info p{color:#8fa1b8;font-size:10px;line-height:1.5;margin:0 0 10px}
+    .video-info button{background:none;border:0;padding:0;color:#a5d3ff;font-size:10px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+    .video-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(1,5,12,.86);backdrop-filter:blur(12px)}
+    .video-modal.open{display:flex}
+    .video-dialog{width:min(900px,100%);border:1px solid rgba(150,190,245,.25);border-radius:18px;background:#0b1422;box-shadow:0 30px 100px rgba(0,0,0,.6);overflow:hidden}
+    .video-modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .video-modal-head strong{font:700 13px Manrope;color:#eef5ff}
+    .video-close{width:32px;height:32px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.04);color:#fff;font-size:18px;cursor:pointer}
+    .video-player{aspect-ratio:16/9;background:#000}
+    .video-player iframe{width:100%;height:100%;border:0;display:block}
+    .video-modal-foot{padding:10px 15px;color:#91a3bb;font-size:10px}
+    @media(max-width:900px){.videos{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.videos{grid-template-columns:1fr}.video-modal{padding:12px}}
   </style>
 </head>
 <body>
@@ -113,8 +147,11 @@
       </a>
       <nav class="navlinks" aria-label="Navegação">
         <a class="active" href="#inicio">Imobiliárias</a>
+        <a href="shopping.html">Shoppings ↗</a>
         <a href="#solucao">Solução</a>
+        <a href="#dados-mercado">Dados</a>
         <a href="#demonstracao">Demonstração</a>
+        <a href="#videos">Vídeos</a>
         <a href="#processo">Processo</a>
         <a href="#planos">Planos</a>
         <a href="#faq">Dúvidas</a>
@@ -172,6 +209,26 @@
       </div>
     </section>
 
+    <section id="dados-mercado">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Dados de mercado</span><h2>O que compradores e vendedores <span class="gradient">já percebem.</span></h2></div><p>Referências de pesquisas e casos publicados. Contextos diferentes; use como argumento de conversa, não como promessa de resultado.</p></div>
+        <div class="grid-3">
+          <article class="card evidence data-card"><div class="feature-icon">71%</div><h3>Compra sem visita presencial</h3><p>Dos compradores entrevistados disseram que considerariam comprar sem ver pessoalmente se o anúncio tivesse tour 3D.</p></article>
+          <article class="card evidence data-card"><div class="feature-icon">87%</div><h3>Precisão percebida</h3><p>Dos vendedores afirmaram que as réplicas digitais representam o imóvel melhor do que as fotos do anúncio.</p></article>
+          <article class="card evidence data-card"><div class="feature-icon">78%</div><h3>Confiança nas imagens</h3><p>Dos entrevistados se preocupam com fotos alteradas ou que não representam totalmente o imóvel.</p></article>
+          <article class="card evidence data-card"><div class="feature-icon">600%</div><h3>Mais visitas virtuais</h3><p>Aumento médio mensal de visitas virtuais desde março de 2020, segundo caso de mercado.</p></article>
+          <article class="card evidence data-card"><div class="feature-icon">50%</div><h3>Menos deslocamentos</h3><p>Redução na necessidade de deslocamentos relatada em operações com tours e gêmeos digitais.</p></article>
+          <article class="card evidence data-card"><div class="feature-icon">80%</div><h3>Mais engajamento</h3><p>Engajamento aprimorado em experiências interativas, conforme casos publicados.</p></article>
+        </div>
+        <div class="data-strip">
+          <div><b>12%</b><span>mais conversão de reservas em anúncios com tours imersivos (hotelaria)</span></div>
+          <div><b>78,5%</b><span>declararam precisar de orientação para localizar lojas (shopping)</span></div>
+          <div><b>62%</b><span>têm dificuldade de imaginar como os móveis ficam no ambiente (showroom)</span></div>
+        </div>
+        <p class="data-note">Dados de pesquisas e casos publicados por terceiros, com contextos e amostras diferentes. Não representam garantia de conversão para o seu imóvel. O piloto deve medir cliques, pedidos de visita e qualidade dos contatos.</p>
+      </div>
+    </section>
+
     <section id="demonstracao">
       <div class="container">
         <div class="section-head"><div><span class="eyebrow">Demonstração</span><h2>Veja como o comprador <span class="gradient">explora o imóvel.</span></h2></div><p>Clique nos pontos para entender a lógica. A experiência real é montada com as fotos e informações do seu imóvel.</p></div>
@@ -196,6 +253,18 @@
           </div>
         </div>
         <p class="pricing-note">Demonstração ilustrativa. O tour real usa fotos do imóvel do cliente, informações aprovadas pela imobiliária e integrações contratadas.</p>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Vídeos</span><h2>Veja as experiências <span class="gradient">em movimento.</span></h2></div><p>Exemplos de tour em edifício e imóvel com itens à venda. Os vídeos abrem dentro da página.</p></div>
+        <div class="videos">
+          <article class="video-card"><div class="video-frame"><button class="video-thumb" type="button" onclick="openVideo('WhC362CB_rY','Tour virtual pelo prédio')" aria-label="Reproduzir vídeo do prédio"><img src="assets/realestate.jpg" alt="Interior de edifício moderno" loading="lazy"><span class="video-play">▶</span><span class="video-thumb-label">EDIFÍCIOS • TOUR DIGITAL</span></button></div><div class="video-info"><small>Vídeo 01 • Edifícios</small><h3>Tour virtual pelo prédio</h3><p>Recepção, pavimentos, áreas comuns e acessos.</p><button type="button" onclick="openVideo('WhC362CB_rY','Tour virtual pelo prédio')">Assistir nesta página ▶</button></div></article>
+          <article class="video-card"><div class="video-frame"><button class="video-thumb" type="button" onclick="openVideo('X5_98D8eXXg','Imóvel com itens à venda')" aria-label="Reproduzir vídeo do imóvel"><img src="assets/realestate.jpg" alt="Apartamento contemporâneo" loading="lazy"><span class="video-play">▶</span><span class="video-thumb-label">IMÓVEL • ITENS À VENDA</span></button></div><div class="video-info"><small>Vídeo 02 • Imobiliário</small><h3>Imóvel com itens à venda</h3><p>O visitante explora o imóvel e clica nos itens à venda.</p><button type="button" onclick="openVideo('X5_98D8eXXg','Imóvel com itens à venda')">Assistir nesta página ▶</button></div></article>
+          <article class="video-card"><div class="video-frame"><button class="video-thumb" type="button" onclick="openVideo('f89Zxx6KfFc','Tour interativo de shopping')" aria-label="Reproduzir vídeo do shopping"><img src="assets/shopping.jpg" alt="Interior de shopping" loading="lazy"><span class="video-play">▶</span><span class="video-thumb-label">SHOPPING • TOUR INTERATIVO</span></button></div><div class="video-info"><small>Vídeo 03 • Shopping</small><h3>Tour interativo de shopping</h3><p>Exemplo de navegação e pontos de interesse em espaço comercial.</p><button type="button" onclick="openVideo('f89Zxx6KfFc','Tour interativo de shopping')">Assistir nesta página ▶</button></div></article>
+        </div>
+        <p class="pricing-note">Os vídeos abrem no player dentro desta página. Se o player não carregar, o conteúdo pode estar bloqueado no canal de origem.</p>
       </div>
     </section>
 
@@ -254,7 +323,16 @@
     </section>
   </main>
 
-  <footer class="footer"><div class="container footer-inner"><div><b>APEX7 AI</b> · Immersive Experiences & Intelligent Growth</div><div>Fortaleza · Ceará · Brasil</div><div><a href="index.html">Voltar ao site principal ↑</a> &nbsp;|&nbsp; <a href="https://wa.me/5584987586308" target="_blank" rel="noopener">WhatsApp: (84) 98758-6308</a></div></div></footer>
+  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Player de vídeo">
+    <div class="video-backdrop" onclick="closeVideo()" style="position:absolute;inset:0"></div>
+    <div class="video-dialog" style="position:relative;z-index:1">
+      <div class="video-modal-head"><strong id="videoModalTitle">Assistir demonstração</strong><button class="video-close" type="button" onclick="closeVideo()" aria-label="Fechar vídeo">×</button></div>
+      <div class="video-player"><iframe id="videoPlayer" src="" title="Vídeo demonstrativo APEX7 AI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="video-modal-foot">Reprodução dentro da página • APEX7 AI</div>
+    </div>
+  </div>
+
+  <footer class="footer"><div class="container footer-inner"><div><b>APEX7 AI</b> · Immersive Experiences & Intelligent Growth</div><div>Fortaleza · Ceará · Brasil</div><div><a href="index.html">Voltar ao site principal ↑</a> &nbsp;|&nbsp; <a href="shopping.html">Shoppings</a> &nbsp;|&nbsp; <a href="https://wa.me/5584987586308" target="_blank" rel="noopener">WhatsApp: (84) 98758-6308</a></div></div></footer>
   <a class="whatsapp-float" href="https://wa.me/5584987586308?text=Ol%C3%A1%2C%20quero%20uma%20proposta%20de%20tour%20360%C2%B0%20para%20imobili%C3%A1ria." target="_blank" rel="noopener"><span>◉</span> Fale conosco</a>
 
   <script>
@@ -281,6 +359,9 @@
       const msg = ['Olá! Vim pela página de imobiliárias da APEX7 AI.', 'Nome: ' + f.get('nome'), 'Imobiliária: ' + f.get('empresa'), 'Volume: ' + f.get('volume'), 'Contato: ' + f.get('contato'), 'O que quero apresentar: ' + f.get('necessidade')].join('\n');
       window.open('https://wa.me/5584987586308?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     });
+    function openVideo(id,title){const modal=$('videoModal'),player=$('videoPlayer');$('videoModalTitle').textContent=title||'Assistir demonstração';player.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?rel=0&modestbranding=1&playsinline=1&controls=1&fs=0&disablekb=1';modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+    function closeVideo(){const modal=$('videoModal'),player=$('videoPlayer');player.src='';modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('videoModal').classList.contains('open'))closeVideo()});
   </script>
 </body>
 </html>

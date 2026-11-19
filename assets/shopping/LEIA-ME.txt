@@ -1,0 +1,34 @@
+PASTA DE IMAGENS DO SHOPPING
+============================
+
+Esta pasta contém as imagens usadas na página shopping.html.
+
+IMAGENS DA JORNADA
+- 01-entrada.png         Tela inicial do diretório ao entrar no shopping
+- 02-busca.png           Busca por nome da loja
+- 03-rota.png            Percurso até a loja escolhida
+- 04-qrcode.png          QR Code de acesso / ponto de referência
+- 05-caminho.png         Caminho criado até o destino
+- 06-oferta.png          Exemplo de oferta na página da loja
+- 07-link-qr.png         Acesso por link no celular ou por QR Code
+- 08-montagem-proposta.png  Visão geral da proposta conceitual
+- 09-qr-video.png        QR Code do vídeo de referência
+- 10-qr-extra.png        QR Code extra extraído do material
+
+CONTEÚDO DE ORIGEM
+    O material .pptx usado para montar esta página NÃO fica nesta pasta,
+    não é enviado ao repositório e não é publicado no site. Fica apenas
+    como referência interna, fora da área de publicação.
+
+galeria.json
+    Lista das imagens que aparecem na seção "Telas da experiência".
+    Para adicionar uma imagem:
+      1. coloque o arquivo nesta pasta;
+      2. acrescente uma linha em galeria.json:
+         {"src":"assets/shopping/novo.png","alt":"Descrição","caption":"Legenda"}
+      3. salve o arquivo. A galeria atualiza sozinha ao recarregar a página.
+
+OBSERVAÇÕES
+- As imagens são referências ilustrativas de conceito.
+- O projeto real usa capturas, mapas e informações aprovadas pelo shopping.
+- Não é necessário editar o HTML para trocar ou adicionar imagens da galeria.

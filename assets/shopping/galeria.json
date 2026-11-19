@@ -1,0 +1,10 @@
+[
+  {"src":"assets/shopping/01-entrada.png","alt":"Tela inicial do diretório ao entrar no shopping","caption":"01 • Ao entrar no shopping, o diretório aparece"},
+  {"src":"assets/shopping/02-busca.png","alt":"Busca por nome da loja nas sugestões","caption":"02 • O visitante digita e encontra a loja nas buscas"},
+  {"src":"assets/shopping/03-rota.png","alt":"Percurso dentro do shopping até a loja escolhida","caption":"03 • O percurso dentro do shopping até a loja escolhida"},
+  {"src":"assets/shopping/04-qrcode.png","alt":"QR Code de acesso ao diretório","caption":"04 • QR Code de acesso em pontos estratégicos"},
+  {"src":"assets/shopping/05-caminho.png","alt":"Caminho criado com visualização até o destino","caption":"05 • O caminho criado é visualizado até onde se quer chegar"},
+  {"src":"assets/shopping/06-oferta.png","alt":"Exemplo de oferta e novidade na página da loja","caption":"06 • A página da loja pode destacar uma promoção"},
+  {"src":"assets/shopping/07-link-qr.png","alt":"Acesso por link no celular ou por QR Code","caption":"07 • Acesso por link no celular ou apenas por QR Code"},
+  {"src":"assets/shopping/08-montagem-proposta.png","alt":"Montagem visual da proposta de diretório e orientação","caption":"08 • Visão geral da proposta conceitual"}
+]

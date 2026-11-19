@@ -3,3 +3,5 @@ Thumbs.db
 *.zip
 *.log
 node_modules/
+*.pptx
+*.ppt
