@@ -74,6 +74,23 @@ no texto, porém sem atribuição de fonte e acompanhados de aviso de que não r
 medição do shopping. O QR Code do vídeo de referência foi mantido como imagem do material
 do próprio proponente; a reprodução no site ocorre por incorporação, sem link de download.
 
+## 5. Página de eventos (`eventos.html`)
+
+A página dedicada a feiras, congressos, exposições e centros de convenções foi montada a
+partir do PDF de proposta (`APEX7_AI_AMBRYX_Proposta_Eventos_Feiras_Centros_Convencoes.pdf`)
+e das orientações comerciais discutidas posteriormente.
+
+O que **não foi publicado**:
+
+| Conteúdo do material de origem | Como ficou no site |
+|---|---|
+| Nomes de plataformas e fornecedores citados nas perguntas e nas tabelas de preços | Removidos. Os recursos são descritos apenas pela função (mapa, diretório, tour 3D, orientação). |
+| Referências a preços publicados por fornecedores e cotações de plataformas | Removidas. Mantidas apenas as faixas de venda sugeridas pela AMBRYX. |
+| Seção “desafio / oportunidade / soluções” do PDF | Não foi reproduzida. A página começa pela proposta e pela jornada do visitante. |
+| Links de download, PDFs e anexos | Não há download nem incorporação de arquivo; o conteúdo foi reescrito em HTML. |
+
+O diretório da demonstração usa expositores fictícios e dados ilustrativos.
+
 ---
 
-*Atualizado em 2026-11-19 para registro interno.*
+*Atualizado em 2026-11-24 para registro interno.*
